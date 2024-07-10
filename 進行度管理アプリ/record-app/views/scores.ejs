@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>課題の点数管理</title>
+  <style>
+    .progress-bar {
+      width: 100%;
+      background-color: #f3f3f3;
+      border-radius: 5px;
+    }
+    .progress {
+      height: 24px;
+      border-radius: 5px;
+      background-color: #4caf50;
+    }
+  </style>
+</head>
+<body>
+  <h1>課題の点数管理</h1>
+  <table>
+    <tr>
+      <th>課題</th>
+      <th>点数</th>
+      <th>進捗</th>
+      <th>操作</th>
+    </tr>
+    <!-- メソッド forEachを使う -->
+    <% tasks.forEach(task => { %> <!-- 課題ごとに行を生成 -->
+      <tr>
+        <td><%= task.name %></td> <!-- 課題名 -->
+        <td><%= task.score %></td> <!-- 課題の現在の得点 -->
+        <td>
+          <div class="progress-bar"> <!-- 進捗バー -->
+            <!-- <div class="progress" style="width: <%= task.score %>% "></div> 得点に基づいた進捗バーの幅 -->
+          </div>
+        </td>
+        <td>
+          <form action="/update_score/<%= task.id %>" method="post"> <!-- 小課題達成ボタン -->
+            <button type="submit">達成</button>
+          </form>
+        </td>
+      </tr>
+    <% }) %>
+  </table>
+</body>
+</html>
