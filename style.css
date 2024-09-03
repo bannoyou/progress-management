@@ -17,10 +17,18 @@ p { font-size: 16px; }
 small { font-size: 13.33px; }
 
 /* コンテナ */
-.container-custom {
-  background-color: #B59D83;
+.container{
+  background-color: #EDD8B7;
   width: 880px;
   max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* record 課題リスト*/
+.lesson-chapter{
+  background-color: #B59D83;
+  font-size: 39.81px;
   margin: 0 auto;
   padding: 20px;
 }
