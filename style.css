@@ -29,6 +29,8 @@ small { font-size: 13.33px; }
 .lesson-chapter{
   background-color: #B59D83;
   font-size: 39.81px;
+  width: 880px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 20px;
 }

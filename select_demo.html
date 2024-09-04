@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pken</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
+    
+</head>
+<body>
+
+<header class="header d-flex align-items-center justify-content-between px-4">
+    <a class="navbar-brand" href="#">Pken</a>
+    <div>
+        <a class="nav-link d-inline" href="#">top</a>
+        <a class="nav-link d-inline" href="#">select</a>
+        <a class="nav-link d-inline" href="#">history</a>
+        <span class="navbar-text d-inline">ユーザーネーム</span>
+    </div>
+</header>
+
+<div class="container-custom mt-4">
+    <div class="accordion">
+        <!-- 第一階層 -->
+        <div class="accordion_item">
+            <div class="accordion_header">all</div>
+            <div class="accordion_inner">
+                <!-- 第二階層 -->
+                <div class="accordion_item">
+                    <div class="accordion_header">c</div>
+                    <div class="accordion_inner"></div>
+                </div>
+                <div class="accordion_item">
+                    <div class="accordion_header">HTML</div>
+                    <div class="accordion_inner">
+                        項目 1.2 のコンテンツ
+                    </div>
+                </div>
+                <div class="accordion_item">
+                    <div class="accordion_header">python</div>
+                    <div class="accordion_inner"></div>
+                </div>
+                <div class="accordion_item">
+                    <div class="accordion_header">SQL</div>
+                    <div class="accordion_inner"></div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion_item">
+            <div class="accordion_header">フロントエンド</div>
+            <div class="accordion_inner">
+                <div class="accordion_item">
+                    <div class="accordion_header">HTML＆CSS</div>
+                    <div class="accordion_inner"></div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion_item">
+            <div class="accordion_header">バックエンド</div>
+            <div class="accordion_inner">
+                <div class="accordion_item">
+                    <div class="accordion_header">SQL</div>
+                    <div class="accordion_inner"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer mt-4 d-flex flex-column justify-content-center align-items-center">
+    <div>
+        <span class="menu-button">メニューボタン</span>
+        <span class="menu-button">メニューボタン</span>
+        <span class="menu-button">メニューボタン</span>
+        <span class="menu-button">メニューボタン</span>
+    </div>
+    <div>©pken2024</div>
+</footer>
+
+
+<script>
+    document.querySelectorAll('.accordion_header').forEach(header => {
+        header.addEventListener('click', () => {
+            const inner = header.nextElementSibling;
+            if (inner.style.display === 'block') {
+                inner.style.display = 'none';
+            } else {
+                inner.style.display = 'block';
+            }
+        });
+    });
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
