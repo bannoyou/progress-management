@@ -71,10 +71,36 @@ update = function () {
 };
 requestAnimationFrame(update);
 
+// function openNav() {
+//     document.getElementById("myNav").style.width = "100%";
+// }
+
+// function closeNav() {
+//     document.getElementById("myNav").style.width = "0%";
+// }
+
 function openNav() {
-    document.getElementById("myNav").style.width = "100%";
+    document.getElementById("overlayMenu").style.width = "100%";
 }
 
 function closeNav() {
-    document.getElementById("myNav").style.width = "0%";
+    document.getElementById("overlayMenu").style.width = "0%";
+}
+
+
+// ハンバーガーメニューの開閉処理
+// document.getElementById("hamburgerMenu").onclick = function() {
+//     document.getElementById("overlayMenu").style.width = "100%";
+// }
+
+// document.getElementById("closeMenu").onclick = function() {
+//     document.getElementById("overlayMenu").style.width = "0";
+// }
+
+document.getElementById("hamburgerMenu").onclick = function() {
+    openNav();  // ここで関数を呼び出す
+}
+
+document.getElementById("closeMenu").onclick = function() {
+    closeNav();  // ここで関数を呼び出す
 }

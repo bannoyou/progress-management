@@ -5,32 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pken</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <link href="./css/style.css" rel="stylesheet">
 </head>
 <body>
 
-<!-- <header class="header d-flex align-items-center justify-content-between px-4">
-    <a class="navbar-brand" href="#">Pken</a>
-    <div>
-        <a class="nav-link d-inline" href="#">top</a>
-        <a class="nav-link d-inline" href="#">select</a>
-        <a class="nav-link d-inline" href="#">history</a>
-        <span class="navbar-text d-inline">ユーザーネーム</span>
-    </div>
-</header> -->
 <header class="header d-flex align-items-center justify-content-between px-4">
     <a class="navbar-brand" href="#">Pken</a>
-    <div>
+    <div class="d-none d-md-block">
         <a class="nav-link d-inline" href="#">top</a>
         <a class="nav-link d-inline" href="#">select</a>
         <a class="nav-link d-inline" href="#">history</a>
         <span class="navbar-text d-inline">ユーザーネーム</span>
     </div>
     <!-- ハンバーガーメニュー -->
-    <button class="btn btn-outline-light d-md-none" data-toggle="modal" data-target="#menuModal">
-        <i class="bi bi-list"></i>
+    <button class="btn btn-outline-light d-md-none" id="hamburgerMenu">
+        <i class="fas fa-bars"></i>
     </button>
 </header>
+
 <div class="container mt-4">
     <div class="row d-flex align-items-center justify-content-center" style="height: 248px; margin:auto;">
         <div id="particles-js"></div>
@@ -57,27 +50,7 @@
                 <div class="list-group-item d-flex justify-content-between align-items-center">
                     for文を理解した！<span class="badge badge-custom p-2">できた</span>
                 </div>
-                <div class="list-group-item d-flex justify-content-between align-items-center">
-                    for文を理解した！<span class="badge badge-custom p-2">できた</span>
-                </div>
-                <div class="list-group-item d-flex justify-content-between align-items-center">
-                    for文を理解した！<span class="badge badge-custom p-2">できた</span>
-                </div>
-                <div class="list-group-item d-flex justify-content-between align-items-center">
-                    for文を理解した！<span class="badge badge-custom p-2">できた</span>
-                </div>
-                <div class="list-group-item d-flex justify-content-between align-items-center">
-                    for文を理解した！<span class="badge badge-custom p-2">できた</span>
-                </div>
-                <div class="list-group-item d-flex justify-content-between align-items-center">
-                    for文を理解した！<span class="badge badge-custom p-2">できた</span>
-                </div>
-                <div class="list-group-item d-flex justify-content-between align-items-center">
-                    for文を理解した！<span class="badge badge-custom p-2">できた</span>
-                </div>
-                <div class="list-group-item d-flex justify-content-between align-items-center">
-                    for文を理解した！<span class="badge badge-custom p-2">できた</span>
-                </div>
+                <!-- 他のアイテム -->
             </div>
         </div>
     </div>
@@ -88,27 +61,17 @@
     </div> 
 </div>      
 
-<!-- モーダル -->
-<div class="modal fade" id="menuModal" tabindex="-1" role="dialog" aria-labelledby="menuModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content" style="background-color:#5A433C; color:#ffffff;">
-        <div class="modal-header">
-          <h5 class="modal-title" id="menuModalLabel">Menu</h5>
-          <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <a class="nav-link text-white" href="#">top</a>
-          <a class="nav-link text-white" href="#">select</a>
-          <a class="nav-link text-white" href="#">history</a>
-          <span class="navbar-text d-inline text-white">ユーザーネーム</span>
-        </div>
-      </div>
+<!-- オーバーレイメニュー -->
+<div id="overlayMenu" class="overlay">
+    <div class="overlay-content">
+        <a href="#">top</a>
+        <a href="#">select</a>
+        <a href="#">history</a>
+        <span class="navbar-text d-inline text-white">ユーザーネーム</span>
+        <button class="close-btn" id="closeMenu">&times;</button>
     </div>
-  </div>
+</div>
 
-  
 <footer class="footer mt-4 d-flex flex-column justify-content-center align-items-center">
     <div>
         <span class="menu-button">メニューボタン</span>
@@ -120,11 +83,12 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-<!-- stats - count particles --> 
-<div class="count-particles"> <span class="js-count-particles">--</span> particles </div> <!-- particles.js lib - https://github.com/VincentGarreau/particles.js --> <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib --> <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="./js/main.js"></script>
+
+
+
 </body>
 </html>
