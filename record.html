@@ -1,121 +1,76 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>record</title>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
 </head>
+
 <body style="background-color: #EDD8B7;">
-    <div class="row" style="background-color: #B59D83; margin-bottom: 22px;">  <!--ヘッダー--> 
-        <div class="col-3"></div>
-        <div class="button" style="width: auto; padding: 7px 10px 7px 10px; font-size: 33.18px;">
-            <a href="#" class="button-a" style="color: #fff;">Pken</a>
-        </div>
-        <div class="button" style="width: auto; padding: 16px; font-size: 16px;">
-            <a href="#" class="button-a" style="color: #000;">top</a>
-        </div>
-        <div class="button" style="width: auto; padding: 16px; font-size: 16px;">
-            <a href="#" class="button-a" style="color: #000;">select</a>
-        </div>
-        <div class="button" style="width: auto; padding: 16px; font-size: 16px;">
-            <a href="#" class="button-a" style="color: #000;">record</a>
+    <div class="header">
+        <div class="row" style="background-color: #B59D83; margin-bottom: 22px;"> <!--ヘッダー-->
+            <div class="button" style="width: auto; padding: 7px 10px 7px 10px; font-size: 33.18px;">
+                <a href="#" class="button-a" style="color: #fff;">Pken</a>
+            </div>
+            <div class="button" style="width: auto; padding: 16px; font-size: 16px;">
+                <a href="#" class="button-a" style="color: #000;">top</a>
+            </div>
+            <div class="button" style="width: auto; padding: 16px; font-size: 16px;">
+                <a href="#" class="button-a" style="color: #000;">select</a>
+            </div>
+            <div class="button" style="width: auto; padding: 16px; font-size: 16px;">
+                <a href="#" class="button-a" style="color: #000;">record</a>
+            </div>
         </div>
     </div>
-    <div>
+    <div class="container mt-4">
         <div class="row" style="margin: 22px;">
-            <div class="col-3"></div>
-            <img src="./C test.jpg" class="col-6">
-        </div> 
-        <div class="row" style="margin: 22px;">
-            <div class="col-3"></div>
-            <div class="col-6">
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 41%" aria-valuenow="41" aria-valuemin="0" aria-valuemax="100"></div>
+            <div style="background-color: #B59D83; width: 880px; height: 288px; display: flex; align-items: center;">
+                <h1 style="font-size: 47.78px; margin: auto;">C</h1>
+            </div>
+        </div>
+
+        <div style=" background-color: #EDD8B7;">
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="progress col-10">
+                    <div class="progress-bar" role="progressbar" style="width: 41%" aria-valuenow="41" aria-valuemin="0"
+                        aria-valuemax="100"></div>
                 </div>
             </div>
         </div>
-        <div class="row" style="margin: 22px;">
-                <div class="col-3"></div>
-            <div class="col-6" >
-                <div>
-                    <div class="row" style="background-color: #B59D83;">
-                        <h4 class="col-7" style="font-size: 20px; margin: 8px;">変数を使おう</h4>
-                    
-                        <button type="button" class="col-3" class="btn btn-primary" style="background-color: #5A433C; color: #fff; font-size: auto; margin: auto;">できた</button>
-                    </div>
-                </div>                <div>
-                    <div class="row" style="background-color: #B59D83;">
-                        <h4 class="col-7" style="font-size: 20px; margin: 8px;">条件分岐を使おう</h4>
-                    
-                        <button type="button" class="col-3" class="btn btn-primary" style="background-color: #5A433C; color: #fff; font-size: auto; margin: auto;">できた</button>
-                    </div>
-                </div>
-                <div>
-                    <div class="row" style="background-color: #B59D83;">
-                        <h4 class="col-7" style="font-size: 20px; margin: 8px;">ループを使おう</h4>
-                    
-                        <button type="button" class="col-3" class="btn btn-primary" style="background-color: #5A433C; color: #fff; font-size: auto; margin: auto;">できた</button>
-                    </div>
-                </div>
-                <div>
-                    <div class="row" style="background-color: #B59D83;">
-                        <h4 class="col-7" style="font-size: 20px; margin: 8px;">配列を使おう</h4>
-                    
-                        <button type="button" class="col-3" class="btn btn-primary" style="background-color: #5A433C; color: #fff; font-size: auto; margin: auto;">できた</button>
-                    </div>
-                </div>
-                <div>
-                    <div class="row" style="background-color: #B59D83;">
-                        <h4 class="col-7" style="font-size: 20px; margin: 8px;">ポインタを使おう</h4>
-                    
-                        <button type="button" class="col-3" class="btn btn-primary" style="background-color: #5A433C; color: #fff; font-size: auto; margin: auto;">できた</button>
-                    </div>
-                </div>
-                <div>
-                    <div class="row" style="background-color: #B59D83;">
-                        <h4 class="col-7" style="font-size: 20px; margin: 8px;">関数を作ろう</h4>
-                    
-                        <button type="button" class="col-3" class="btn btn-primary" style="background-color: #5A433C; color: #fff; font-size: auto; margin: auto;">できた</button>
-                    </div>
-                </div>
-                <div>
-                    <div class="row" style="background-color: #B59D83;">
-                        <h4 class="col-7" style="font-size: 20px; margin: 8px;">構造体を使おう</h4>
-                    
-                        <button type="button" class="col-3" class="btn btn-primary" style="background-color: #5A433C; color: #fff; font-size: auto; margin: auto;">できた</button>
-                    </div>
-                </div>
-                <div>
-                    <div class="row" style="background-color: #B59D83;">
-                        <h4 class="col-7" style="font-size: 20px; margin: 8px;">ファイルを操作しよう</h4>
-                    
-                        <button type="button" class="col-3" class="btn btn-primary" style="background-color: #5A433C; color: #fff; font-size: auto; margin: auto;">できた</button>
-                    </div>
-                </div>
-                <div>
-                    <div class="row" style="background-color: #B59D83;">
-                        <h4 class="col-7" style="font-size: 20px; margin: 8px;">メモリを管理しよう</h4>
-                    
-                        <button type="button" class="col-3" class="btn btn-primary" style="background-color: #5A433C; color: #fff; font-size: auto; margin: auto;">できた</button>
-                    </div>
-                </div>
-                <div>
-                    <div class="row" style="background-color: #B59D83;">
-                        <h4 class="col-7" style="font-size: 20px; margin: 8px;">エラー処理をしよう</h4>
-                    
-                        <button type="button" class="col-3" class="btn btn-primary" style="background-color: #5A433C; color: #fff; font-size: auto; margin: auto;">できた</button>
+        <div class="mt-4">
+            <div class="row" style="margin: 22px;">
+                <div class="col-12">
+                    <div> <!--複製時はこのdivをコピーする(多分…違ったらすまん)-->
+                        <div class="row" style="background-color: #B59D83;">
+                            <h4 class="col-10" style="font-size: 20px; margin: 8px;">for文を理解した！</h4>
+
+                            <button type="button" class="btn btn-primary"
+                                style="background-color: #5A433C; color: #fff; font-size: auto; margin: auto;">達成</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-8"></div>
-        <button type="button" class="btn btn-primary" style="background-color: #5A433C; color: #fff;">戻る</button>
+        <div class="row">
+            <div class="col-8"></div>
+            <button type="button" class="btn btn-primary" style="background-color: #5A433C; color: #fff;">戻る</button>
+        </div>
     </div>
 </body>
+
 </html>
