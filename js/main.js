@@ -1,3 +1,13 @@
+// ハンバーガーメニューの開閉処理
+document.getElementById("hamburgerMenu").onclick = function() {
+    document.getElementById("overlayMenu").style.width = "100%";
+}
+
+document.getElementById("closeMenu").onclick = function() {
+    document.getElementById("overlayMenu").style.width = "0";
+}
+
+
 particlesJS("particles-js", {
     particles: {
         number: { value: 6, density: { enable: true, value_area: 800 } },
@@ -78,3 +88,6 @@ function openNav() {
 function closeNav() {
     document.getElementById("myNav").style.width = "0%";
 }
+
+
+
