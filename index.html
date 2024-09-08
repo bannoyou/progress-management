@@ -5,69 +5,208 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+        .container-fluid {
+            margin-right: auto;
+            margin-left: auto;
+            max-width: 600px;
+        }
+    </style>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="./css/style.css" rel="stylesheet">
 </head>
 
 <body style="background-color: #EDD8B7;">
-    <div class="row" style="background-color: #B59D83; margin-bottom: 22px;">
-        <div class="col-3"></div>
-        <div class="button" style="width: auto; padding: 7px 10px 7px 10px; font-size: 33.18px;">
-            <a href="a" class="button-a" style="color: #fff">Pken</a>
+    <header class="header d-flex align-items-center justify-content-between px-4">
+        <a class="navbar-brand" href="#">Pken</a>
+        <div class="d-none d-md-block">
+            <a class="nav-link d-inline" href="#">top</a>
+            <a class="nav-link d-inline" href="#">select</a>
+            <a class="nav-link d-inline" href="#">history</a>
+            <span class="navbar-text d-inline">ユーザーネーム</span>
         </div>
-        <div class="button" style="width: auto; padding: 16px; font-size: 16px;">
-            <a href="a" class="button-a" style="color: #000">top</a>
-        </div>
-        <div class="button" style="width: auto; padding:16px; font-size: 16px;">
-            <a href="a" class="button-a" style="color: #000">select</a>
-        </div>
-        <div class="button" style="width: auto; padding:16px; font-size: 16px;">
-            <a href="a" class="button-a" style="color: #000">record</a>
-        </div>
-    </div>
+        <!-- ハンバーガーメニュー -->
+        <button class="btn btn-outline-light d-md-none" id="hamburgerMenu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-3">
-                <h3>name</h3>
-            </div>
-            <div class="col-9">
-                <progress></progress>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-3">
-                <h3>name</h3>
-            </div>
-            <div class="col-9">
-                <progress></progress>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-3">
-                <h3>name</h3>
-            </div>
-            <div class="col-9">
-                <progress></progress>
-            </div>
-        </div>
-        <div class="card" _msthidden="4">
-            <div class="card-body" _msthidden="3">
-
-                <h4 class="card-title" _msttexthash="134446" _msthidden="1" _msthash="667">html&css</h4>
-                <div class="row">
-                    <div class="col-3">
-                        <h3>name</h3>
+        <div class="card mt-4" _msthidden="4">
+            <div style="background-color:  #B59D83;">
+                <div class="card-body" _msthidden="3">
+                    <div class="card-name">
+                        <h4 class="card-title" _msttexthash="134446" _msthidden="1" _msthash="667">c++</h4>
                     </div>
-                    <div class="col-9">
-                        <progress></progress>
+                    <div class="row">
+                        <div class="col-3">
+                            <h3>name</h3>
+                        </div>
+                        <div class="col-9">
+                            <progress></progress>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <h3>name</h3>
+                        </div>
+                        <div class="col-9">
+                            <progress></progress>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <h3>name</h3>
+                        </div>
+                        <div class="col-9">
+                            <progress></progress>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card mt-4" _msthidden="4">
+            <div style="background-color: #B59D83;">
+                <div class="card-body" _msthidden="3">
+                    <h4 class="card-title" _msttexthash="134446" _msthidden="1" _msthash="667">html&css</h4>
+                    <div class="row">
+                        <div class="col-3">
+                            <h3>name</h3>
+                        </div>
+                        <div class="col-9">
+                            <progress></progress>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <h3>name</h3>
+                        </div>
+                        <div class="col-9">
+                            <progress></progress>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <h3>name</h3>
+                        </div>
+                        <div class="col-9">
+                            <progress></progress>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card mt-4" _msthidden="4">
+            <div style="background-color: #EDD8B7;">
+                <div class="card-body" _msthidden="3">
+                    <div>
+                        <h4 class="card-title" _msttexthash="134446" _msthidden="1" _msthash="667">javasqript</h4>
+                        <div class="card-name">
+                            <div class="row">
+                                <div class="col-3">
+                                    <h3>name</h3>
+                                </div>
+                                <div class="col-9">
+                                    <progress></progress>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-3">
+                                    <h3>name</h3>
+                                </div>
+                                <div class="col-9">
+                                    <progress></progress>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-3">
+                                    <h3>name</h3>
+                                </div>
+                                <div class="col-9">
+                                    <progress></progress>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div id="overlayMenu" class="overlay">
+        <div class="overlay-content">
+            <a href="#">top</a>
+            <a href="#">select</a>
+            <a href="#">history</a>
+            <span class="navbar-text d-inline text-white">ユーザーネーム</span>
+            <button class="close-btn" id="closeMenu">&times;</button>
+        </div>
+    </div>
 
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-item">
+                <a href="#">
+                    <i class="bi bi-link-45deg"></i> <!-- リンクアイコン -->
+                    リンク
+                </a>
+                <a href="#">
+                    <i class="bi bi-link-45deg"></i> <!-- リンクアイコン -->
+                    リンク
+                </a>
+                <a href="#">
+                    <i class="bi bi-list"></i> <!-- メニューボタンのアイコン -->
+                    メニューボタン
+                </a>
+            </div>
+            <div class="footer-item">
+                <a href="#">
+                    <i class="bi bi-link-45deg"></i> <!-- リンクアイコン -->
+                    リンク
+                </a>
+                <a href="#">
+                    <i class="bi bi-link-45deg"></i> <!-- リンクアイコン -->
+                    リンク
+                </a>
+                <a href="#">
+                    <i class="bi bi-list"></i> <!-- メニューボタンのアイコン -->
+                    メニューボタン
+                </a>
+            </div>
+            <div class="footer-item">
+                <a href="#">
+                    <i class="bi bi-link-45deg"></i> <!-- リンクアイコン -->
+                    リンク
+                </a>
+                <a href="#">
+                    <i class="bi bi-link-45deg"></i> <!-- リンクアイコン -->
+                    リンク
+                </a>
+                <a href="#">
+                    <i class="bi bi-list"></i> <!-- メニューボタンのアイコン -->
+                    メニューボタン
+                </a>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            ©pken2024
+        </div>
+    </footer>
+    <script>
+        document.querySelectorAll('.accordion_header').forEach(header => {
+            header.addEventListener('click', () => {
+                const inner = header.nextElementSibling;
+                if (inner.style.display === 'block') {
+                    inner.style.display = 'none';
+                } else {
+                    inner.style.display = 'block';
+                }
+            });
+        });
+    </script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>
