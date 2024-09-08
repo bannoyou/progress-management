@@ -39,6 +39,16 @@ p {
 small {
   font-size: 13.33px;
 }
+.recbutton{
+  background-color: #5A433C;
+  color: #fff;
+  font-size: auto;
+  margin: auto;
+}
+
+.kadai-in{
+  background-color: #B59D83;
+}
 
 /* コンテナ */
 .container {
