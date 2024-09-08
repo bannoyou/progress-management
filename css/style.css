@@ -73,11 +73,67 @@ small {
 }
 
 .footer {
-  background-color: #5A433C;
-  color: #FFFFFF;
-  bottom: 0;
-  height: 176px;
+  background-color: #B59D83; /* 背景色の変更 */
+  height: 176px; /* 高さの指定 */
+  padding: 20px;
+  text-align: center;
+  color: #333;
+  font-family: Arial, sans-serif;
 }
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.footer-item {
+  flex: 1;
+  text-align: center;
+  border-left: 1px solid #fff; /* 境界線の色を白に変更 */
+}
+
+.footer-item:first-child {
+  border-left: none; /* 最初のアイテムには左ボーダーを設定しない */
+}
+
+.footer-item a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 0;
+}
+
+.footer-item a:hover {
+  color: #000;
+}
+
+.footer-item i {
+  margin-right: 5px;
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+.icon-home {
+  font-size: 24px;
+  display: block;
+  margin: 0 auto;
+}
+
+.footer a span {
+  display: block;
+}
+
+.footer-copyright {
+  width: auto;
+  height: 20px;
+  font-size: 12px;
+  color: #000;
+  background-color: #B59D83;
+}
+
 
 /* ナビゲーション */
 .nav-link,
@@ -100,8 +156,10 @@ small {
   color: #FFFFFF;
 }
 
-/* メディアクエリ - 画面幅999px以下の場合 */
-@media (max-width: 999px) {
+
+/*ヘッダー メディアクエリ - 画面幅767px以下の場合 */
+@media (max-width: 767px) {
+
   .header {
     justify-content: space-between;
   }
@@ -117,10 +175,11 @@ small {
   .header .btn {
     display: block !important; /* ハンバーガーメニューを表示 */
   }
+  
 }
 
-/* 画面幅が1000px以上の場合 */
-@media (min-width: 1000px) {
+/* 画面幅が768px以上の場合 */
+@media (min-width: 768px) {
   .header .btn {
     display: none; /* ハンバーガーメニューを非表示 */
   }
@@ -235,6 +294,7 @@ small {
   background-color: #5A433C;
 }
 
+/* 言語ロゴ */
 .area-title {
   position: absolute;
   display: flex;
