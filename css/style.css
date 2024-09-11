@@ -40,6 +40,11 @@ small {
   font-size: 13.33px;
 }
 
+/*leaning history　progressbar*/
+progress{
+  width: 400px;
+}
+
 /* コンテナ */
 .container {
   background-color: #EDD8B7;
@@ -377,5 +382,17 @@ canvas {
 padding: auto 0px !important;
 }
 .card-name{
+  background-color: #B59D83;
+}
+.card-body{
+  padding: 0px;
+}
+
+.card-title{
+  padding-left: 10px;
+}
+
+.card-name{
+  padding: 20px;
   background-color: #B59D83;
 }
