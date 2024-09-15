@@ -40,18 +40,6 @@ small {
   font-size: 13.33px;
 }
 
-.recbutton{
-  background-color: #5A433C;
-  color: #fff;
-  font-size: auto;
-  margin: auto;
-}
-
-.kadai-in{
-  background-color: #B59D83;
-  align-items: center;
-}
-
 /* コンテナ */
 .container {
   background-color: #EDD8B7;
@@ -381,4 +369,18 @@ canvas {
 
 .count-particles {
   border-radius: 0 0 3px 3px;
+}
+
+
+/*ここから下が独自のアイテム*/
+.recbutton{
+  background-color: #5A433C;
+  color: #fff;
+  font-size: auto;
+  margin: auto;
+}
+
+.kadai-in{
+  background-color: #B59D83;
+  align-items: center;
 }
