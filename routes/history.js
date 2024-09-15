@@ -18,7 +18,7 @@ router.get('/',(req,res)=>{
 
                     
                     const progress_rank=results;
-                    res.render('index',{titles:main_tasks,user_progress:progress_rank});
+                    res.render('learning-history',{titles:main_tasks,user_progress:progress_rank});
                     //console.log(main_tasks);
                     //console.log(progress_rank);
 
