@@ -370,3 +370,17 @@ canvas {
 .count-particles {
   border-radius: 0 0 3px 3px;
 }
+
+/*  */
+.card-body{
+  padding: 0px;
+}
+
+.card-title{
+  padding-left: 10px;
+}
+
+.card-name{
+  padding: 20px;
+  background-color: #B59D83;
+}
