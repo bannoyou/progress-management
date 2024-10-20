@@ -51,7 +51,8 @@ module.exports = router;
 // メインタスク、サブタスク、プログレスバーのデータを取得
 router.get('/:mainTaskId', async (req, res) => {
     const mainTaskId = req.params.mainTaskId;
-    const userId = req.user ? req.user.id : 1; // 仮のユーザーIDを1と設定
+    const userId = req.session.userid; 
+    console.log(userId);
 
     try {
         // メインタスクを取得
