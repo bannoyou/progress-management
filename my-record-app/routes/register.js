@@ -20,6 +20,8 @@ router.post('/register', async (req, res) => {
       const username = req.body.name;
       const password = req.body.pass;
 
+      console.log('受け取ったパスワード:', password); // 追加: パスワードを表示
+      
       // パスワード強度のバリデーション
       if (!validatePassword(password)) {
           return res.send({ msg: 'パスワードは8文字以上で、大文字、小文字、数字を含む必要があります。' });
