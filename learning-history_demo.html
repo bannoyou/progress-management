@@ -1,139 +1,140 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learning History</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <style>
-        body {
-            background-color: #EDD8B7;
-        }
-        .container-custom {
-            background-color: #B59D83;
-            width: 880px;
-            max-width: 100%;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .header, .footer {
-            background-color: #B59D83;
-            color: #FFFFFF;
-        }
-        .header {
-            height: 56px;
-        }
-        .footer {
-            height: 176px;
-        }
-        .nav-link, .navbar-brand {
-            color: #FFFFFF !important;
-        }
-        .btn-custom {
-            background-color: #5A433C;
-            color: #FFFFFF;
-        }
-        .section-title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-        .name-list {
-            background-color: #C4B19A;
-            padding: 10px;
-            margin-bottom: 20px;
-        }
-        .name-item {
-            background-color: #C4B19A;
-            border: 1px solid #B59D83;
-            padding: 8px;
-            margin-bottom: 5px;
-        }
-        .footer .menu-button {
-            margin: 0 10px;
+        .container-fluid {
+            margin-right: auto;
+            margin-left: auto;
+            max-width: 600px;
         }
     </style>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="./css/style.css" rel="stylesheet">
 </head>
-<body>
 
-<header class="header d-flex align-items-center justify-content-between px-4">
-    <a class="navbar-brand" href="#">Pken</a>
-    <div>
-        <a class="nav-link d-inline" href="#">top</a>
-        <a class="nav-link d-inline" href="#">select</a>
-        <a class="nav-link d-inline" href="#">record</a>
-        <span class="navbar-text d-inline">ユーザーネーム</span>
-    </div>
-</header>
-
-<div class="container-custom mt-4">
-    <div class="section-title">C++</div>
-    <div class="name-list">
-        <div class="name-item">
-            name
+<body style="background-color: #EDD8B7;">
+    <header class="header d-flex align-items-center justify-content-between px-4">
+        <a class="navbar-brand" href="#">Pken</a>
+        <div class="d-none d-md-block">
+            <a class="nav-link d-inline" href="#">top</a>
+            <a class="nav-link d-inline" href="#">select</a>
+            <a class="nav-link d-inline" href="#">history</a>
+            <span class="navbar-text d-inline">ユーザーネーム</span>
         </div>
-        <div class="name-item">name</div>
-        <div class="name-item">name</div>
-        <div class="name-item">name</div>
-        <div class="name-item">name</div>
-    </div>
-
-    <div class="section-title">言語</div>
-    <div class="name-list">
-        <div class="name-item">
-            name
-
+        <!-- ハンバーガーメニュー -->
+        <button class="btn btn-outline-light d-md-none" id="hamburgerMenu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+    <div class="container">
+        <div class="card mt-4" _msthidden="4">
+            <div style="background-color: #EDD8B7;">
+                <div class="card-body" _msthidden="3">
+                    <div>
+                        <h4 class="card-title" _msttexthash="134446" _msthidden="1" _msthash="667">javasqript</h4>
+                        <div class="card-name">
+                            <div class="row d-flex align-items-center justify-content-between">
+                                <div class="col-3">
+                                    <h5>name</h5>
+                                </div>
+                                <div class="col-9">
+                                    <progress></progress>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="name-item">name</div>
-        <div class="name-item">name</div>
-        <div class="name-item">name</div>
-        <div class="name-item">name</div>
     </div>
-
-    <div class="section-title">言語</div>
-    <div class="name-list">
-        <div class="name-item">
-            name
-
+    <div id="overlayMenu" class="overlay">
+        <div class="overlay-content">
+            <a href="#">top</a>
+            <a href="#">select</a>
+            <a href="#">history</a>
+            <span class="navbar-text d-inline text-white">ユーザーネーム</span>
+            <button class="close-btn" id="closeMenu">&times;</button>
         </div>
-        <div class="name-item">name</div>
-        <div class="name-item">name</div>
-        <div class="name-item">name</div>
-        <div class="name-item">name</div>
     </div>
-
-    <div class="section-title">言語</div>
-    <div class="name-list">
-        <div class="name-item">
-            name
-
+    <div id="overlayMenu" class="overlay">
+        <div class="overlay-content">
+            <a href="#">top</a>
+            <a href="#">select</a>
+            <a href="#">history</a>
+            <span class="navbar-text d-inline text-white">ユーザーネーム</span>
+            <button class="close-btn" id="closeMenu">&times;</button>
         </div>
-        <div class="name-item">name</div>
-        <div class="name-item">name</div>
-        <div class="name-item">name</div>
-        <div class="name-item">name</div>
     </div>
-</div>
-
-<footer class="footer mt-4 d-flex flex-column justify-content-center align-items-center">
-    <div class="d-flex flex-wrap justify-content-center">
-        <span class="menu-button mx-2">メニューボタン</span>
-        <span class="menu-button mx-2">メニューボタン</span>
-        <span class="menu-button mx-2">メニューボタン</span>
-        <span class="menu-button mx-2">メニューボタン</span>
-    </div>
-    <div class="d-flex flex-wrap justify-content-center">
-        <span class="menu-button mx-2">メニューボタン</span>
-        <span class="menu-button mx-2">メニューボタン</span>
-        <span class="menu-button mx-2">メニューボタン</span>
-        <span class="menu-button mx-2">メニューボタン</span>
-    </div>
-    <div class="mt-3">©pken2024</div>
-</footer>
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-item">
+                <a href="#">
+                    <i class="bi bi-link-45deg"></i> <!-- リンクアイコン -->
+                    リンク
+                </a>
+                <a href="#">
+                    <i class="bi bi-link-45deg"></i> <!-- リンクアイコン -->
+                    リンク
+                </a>
+                <a href="#">
+                    <i class="bi bi-list"></i> <!-- メニューボタンのアイコン -->
+                    メニューボタン
+                </a>
+            </div>
+            <div class="footer-item">
+                <a href="#">
+                    <i class="bi bi-link-45deg"></i> <!-- リンクアイコン -->
+                    リンク
+                </a>
+                <a href="#">
+                    <i class="bi bi-link-45deg"></i> <!-- リンクアイコン -->
+                    リンク
+                </a>
+                <a href="#">
+                    <i class="bi bi-list"></i> <!-- メニューボタンのアイコン -->
+                    メニューボタン
+                </a>
+            </div>
+            <div class="footer-item">
+                <a href="#">
+                    <i class="bi bi-link-45deg"></i> <!-- リンクアイコン -->
+                    リンク
+                </a>
+                <a href="#">
+                    <i class="bi bi-link-45deg"></i> <!-- リンクアイコン -->
+                    リンク
+                </a>
+                <a href="#">
+                    <i class="bi bi-list"></i> <!-- メニューボタンのアイコン -->
+                    メニューボタン
+                </a>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            ©pken2024
+        </div>
+    </footer>
+    <script>
+        document.querySelectorAll('.accordion_header').forEach(header => {
+            header.addEventListener('click', () => {
+                const inner = header.nextElementSibling;
+                if (inner.style.display === 'block') {
+                    inner.style.display = 'none';
+                } else {
+                    inner.style.display = 'block';
+                }
+            });
+        });
+    </script>
+    <script src="./js/main.js"></script>
 </body>
+
 </html>
