@@ -32,6 +32,14 @@ h6 {
   font-size: 19.2px;
 }
 
+h7 {
+  font-size: 36px;
+}
+
+h8{
+  font-size: 24px;
+}
+
 p {
   font-size: 16px;
 }
@@ -396,3 +404,8 @@ padding: auto 0px !important;
   padding: 20px;
   background-color: #B59D83;
 }
+
+@media screen and (max-width: 768px) {
+  /* 768px以下の画面サイズで適用されるスタイル */
+  
+  }
