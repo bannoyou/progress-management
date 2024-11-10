@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const loginRoutes = require('./routes/login'); // login.js へのパスを追加
 const recordRoutes = require('./routes/record');
 const registerRoutes = require('./routes/register');
+const historyRoutes = require('./routes/history');
 const app = express();
 
 //セッション管理
@@ -33,6 +34,11 @@ if (app.get('env') === 'production') {
 
 app.use(session(sess))
 
+// 共通データをセットするミドルウェア
+app.use((req, res, next) => {
+  res.locals.user_name = req.session.name || "Guest"; // セッションからユーザー名を取得
+  next();  // 次のミドルウェアまたはルートハンドラーへ
+});
 
 //閲覧数を記録
 app.get('/', (req, res,next) => {
@@ -68,6 +74,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // ルートを設定
 app.use('/register', registerRoutes);
 app.use('/record', recordRoutes);
+app.use('/history',historyRoutes);
 app.use('/', loginRoutes);
 
 // サーバーをポート3000で起動

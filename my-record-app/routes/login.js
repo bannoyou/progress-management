@@ -15,6 +15,8 @@ router.post('/login', async (req, res) => {
         if (rows.length > 0) {
             const user = rows[0];  // ユーザー情報を取得
 
+            console.log(user.id);
+            console.log(user.name);
             // パスワードを比較（bcryptを使用）
             const isMatch = await bcrypt.compare(pass, user.pass);
             
@@ -24,6 +26,7 @@ router.post('/login', async (req, res) => {
                 req.session.name = user.name;
 
                 console.log(user.id);
+                console.log(user.name);
                 res.render('select', { username: user.name });
 
             } else {
@@ -39,5 +42,7 @@ router.post('/login', async (req, res) => {
         res.status(500).send('サーバーエラーが発生しました');
     }
 });
+
+
 
 module.exports = router;

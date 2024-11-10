@@ -28,7 +28,7 @@
       <a class="nav-link d-inline" href="#">top</a>
       <a class="nav-link d-inline" href="#">select</a>
       <a class="nav-link d-inline" href="#">history</a>
-      <span class="navbar-text d-inline">ユーザーネーム</span>
+      <span class="navbar-text d-inline"><%= user_name%></span>
     </div>
     <!-- ハンバーガーメニュー -->
     <button class="btn btn-outline-light d-md-none" id="hamburgerMenu">
@@ -38,9 +38,10 @@
   </div>
   <div class="container mt-4">
     <div class="row d-flex align-items-center justify-content-center" style="height: 248px; margin:auto">
-      <div id="particles-js"></div>
+      <div id="particles-js" style="border-radius: 0.75rem;"></div>
       <div class="area-title">
-        <img src="/img/title_c.png" alt="タイトル画像" class="title-image">
+        <!-- 動的に画像を表示 -->
+        <img src="<%= imagePath %>" alt="タイトル画像" class="title-image">
       </div>
     </div>
 
@@ -73,12 +74,6 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- 戻るボタン -->
-    <div class="row">
-      <div class="col-8"></div>
-      <button type="button" class="btn btn-primary" style="background-color: #5A433C; color: #fff;">戻る</button>
     </div>
   </div>
   <!-- オーバーレイメニュー -->

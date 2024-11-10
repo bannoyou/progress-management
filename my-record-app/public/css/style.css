@@ -285,12 +285,13 @@ small {
   background-color: #5a433c;
   color: white;
   border: 1px solid white;
+  font-size: 27.65px;
 }
 
 .accordion_inner {
   display: none;
   padding-left: 20px;
-
+  
 }
 
 .accordion_header a {

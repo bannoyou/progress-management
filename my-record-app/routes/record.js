@@ -32,13 +32,13 @@ router.post('/achieve', async (req, res) => {
             // res.json({ success: true, message: 'タスクを達成しました！' });
 
             // recordページにリダイレクト
-            res.redirect('http://localhost:3000/record/1');
+            res.redirect('http://localhost:3000/record/'+ mainTaskId);
 
         } else {
             // res.json({ success: false, message: '既に達成済みです。' });
 
             // recordページにリダイレクト
-            res.redirect('http://localhost:3000/record/1');
+            res.redirect('http://localhost:3000/record/'+ mainTaskId);
         }
     } catch (error) {
         console.error(error);
@@ -75,8 +75,23 @@ router.get('/:mainTaskId', async (req, res) => {
         
         console.log(progress);
 
+        // 画像のパスを決定
+        let imagePath;
+        if (mainTaskId === '1') {
+            imagePath = '/img/c.png';
+        } else if (mainTaskId === '2') {
+            imagePath = '/img/HTML.png';
+        } else if (mainTaskId === '3') {
+            imagePath = '/img/Python.png';
+        } else if (mainTaskId === '4') {
+            imagePath = '/img/mysql.png';
+        }
+         else {
+            imagePath = '/Img/default.png'; // デフォルト画像
+        }
+
         // テンプレートにデータを渡す
-        res.render('record', { mainTask, subTasks, progress, userId });
+        res.render('record', { mainTask, subTasks, progress, userId, imagePath });
     } catch (error) {
         console.error(error);
         res.status(500).send('サーバーエラー');
