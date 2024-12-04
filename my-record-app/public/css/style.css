@@ -1,0 +1,409 @@
+/* グローバル設定 */
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #edd8b7;
+  padding-top: 56px;
+  /* ヘッダーの高さ分の余白 */
+
+  margin: 0;
+}
+
+h1 {
+  font-size: 47.78px;
+}
+
+h2 {
+  font-size: 39.81px;
+}
+
+h3 {
+  font-size: 33.18px;
+}
+
+h4 {
+  font-size: 27.65px;
+}
+
+h5 {
+  font-size: 23.04px;
+}
+
+h6 {
+  font-size: 19.2px;
+}
+
+p {
+  font-size: 16px;
+}
+
+small {
+  font-size: 13.33px;
+}
+
+/* コンテナ */
+.container {
+  background-color: #edd8b7;
+  width: 880px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* record 課題リスト*/
+.lesson-chapter {
+  background-color: #b59d83;
+  font-size: 39.81px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ヘッダーとフッター */
+.header {
+  background-color: #b59d83;
+  color: #ffffff;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.header {
+  top: 0;
+  height: 56px;
+}
+
+.footer {
+  background-color: #b59d83; /* 背景色の変更 */
+  height: 176px; /* 高さの指定 */
+  padding: 20px;
+  text-align: center;
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.footer-item {
+  flex: 1;
+  text-align: center;
+  border-left: 1px solid #fff; /* 境界線の色を白に変更 */
+}
+
+.footer-item:first-child {
+  border-left: none; /* 最初のアイテムには左ボーダーを設定しない */
+}
+
+.footer-item a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 0;
+}
+
+.footer-item a:hover {
+  color: #000;
+}
+
+.footer-item i {
+  margin-right: 5px;
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+.icon-home {
+  font-size: 24px;
+  display: block;
+  margin: 0 auto;
+}
+
+.footer a span {
+  display: block;
+}
+
+.footer-copyright {
+  width: auto;
+  height: 20px;
+  font-size: 12px;
+  color: #000;
+  background-color: #b59d83;
+}
+
+/* ナビゲーション */
+.nav-link,
+.navbar-brand {
+  color: #ffffff !important;
+}
+
+.navbar-brand {
+  font-size: 33.18px;
+  margin-right: 1rem;
+}
+
+/* モーダル */
+.modal-content {
+  background-color: #5a433c;
+  color: #ffffff;
+}
+
+.close {
+  color: #ffffff;
+}
+
+/*ヘッダー メディアクエリ - 画面幅767px以下の場合 */
+@media (max-width: 767px) {
+  .header {
+    justify-content: space-between;
+  }
+
+  .header h3 {
+    font-size: 28px; /* ロゴのフォントサイズを調整 */
+  }
+
+  .header .nav-link,
+  .header .navbar-text {
+    display: none !important; /* リンクを非表示 */
+  }
+
+  .header .btn {
+    display: block !important; /* ハンバーガーメニューを表示 */
+  }
+}
+
+/* 画面幅が768px以上の場合 */
+@media (min-width: 768px) {
+  .header .btn {
+    display: none; /* ハンバーガーメニューを非表示 */
+  }
+
+  .header .nav-link,
+  .header .navbar-text {
+    display: inline-block; /* リンクを表示 */
+  }
+}
+
+/* オーバーレイ全体の設定 */
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  right: 0; /* 右側から表示 */
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+  z-index: 1000;
+}
+
+/* オーバーレイのコンテンツ */
+.overlay-content {
+  position: relative;
+  top: 20%; /* 中央に配置 */
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* オーバーレイ内のリンク */
+.overlay-content a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay-content a:hover,
+.overlay-content a:focus {
+  color: #f1f1f1;
+}
+
+/* ユーザーネームのスタイルと間隔 */
+.overlay-content .navbar-text {
+  font-size: 36px;
+  color: white;
+  margin-bottom: 40px; /* ユーザーネームとリンクの間に余白を追加 */
+}
+
+/* ×ボタンのスタイル */
+.closebtn {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 40px;
+  color: white;
+}
+
+/* スクリーンサイズ1000px以上の場合の調整 */
+@media (min-width: 1000px) {
+  .header .btn {
+    display: none; /* ハンバーガーメニューを非表示 */
+  }
+
+  .header .nav-link,
+  .header .navbar-text {
+    display: inline-block; /* リンクを表示 */
+  }
+}
+
+/* ボタン */
+.btn-custom {
+  background-color: #5a433c;
+  color: #ffffff;
+}
+
+/* リストアイテム */
+.list-group-item {
+  background-color: #b59d83;
+  border-color: white;
+  font-size: 39.81px;
+  height: 96px;
+}
+
+/* バッジ */
+.badge-custom {
+  background-color: #5a433c;
+  color: white;
+}
+
+/* フッターメニュー */
+.footer .menu-button {
+  margin: 0 10px;
+}
+
+/* アコーディオン */
+.accordion_header {
+  height: 72px;
+  cursor: pointer;
+  padding: 10px;
+  background-color: #5a433c;
+  color: white;
+  border: 1px solid white;
+  font-size: 27.65px;
+}
+
+.accordion_inner {
+  display: none;
+  padding-left: 20px;
+  
+}
+
+.accordion_header a {
+  text-decoration: none; /* 下線を消す */
+  color: inherit;        /* 親要素の色を引き継ぐ */
+}
+
+.accordion_header a:hover {
+  color: #007bff;        /* マウスホバー時の色を設定 */
+}
+
+
+/* 言語ロゴ */
+.area-title {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  width: 244px;
+  height: 244px;
+  text-align: center;
+  padding: 16px; /* 画像との間隔 */
+  border-radius: 15px; /* 角を丸める */
+}
+
+.title-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* 画像のアスペクト比を保ちながら、要素内に収まるように */
+}
+/* ---- reset ---- */
+
+canvas {
+  display: block;
+  vertical-align: bottom;
+}
+
+/* ---- particles.js container ---- */
+#particles-js {
+  /* position: absolute; */
+  width: 880px; /* 幅を300pxに縮小 */
+  height: 248px; /* 高さを300pxに縮小 */
+  position: relative;
+  background-color: #b59d83;
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+/* ---- stats.js ---- */
+.count-particles {
+  background: #000022;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 80px;
+  color: #13e8e9;
+  font-size: 0.8em;
+  text-align: left;
+  text-indent: 4px;
+  line-height: 14px;
+  padding-bottom: 2px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+
+.js-count-particles {
+  font-size: 1.1em;
+}
+
+#stats,
+.count-particles {
+  webkit-user-select: none;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+#stats {
+  border-radius: 3px 3px 0 0;
+  overflow: hidden;
+}
+
+.count-particles {
+  border-radius: 0 0 3px 3px;
+}
+
+/*learnig-history*/
+.card-body {
+  padding: 0px;
+}
+
+.card-title {
+  padding-left: 10px;
+}
+
+.card-name {
+  padding: 20px;
+  background-color: #b59d83;
+}
+
+/*ここから下が独自のアイテム*/
+.recbutton{
+  background-color: #5A433C;
+  color: #fff;
+  font-size: auto;
+  margin: auto;
+}
+
+.kadai-in{
+  background-color: #B59D83;
+  align-items: center;
+}
+
