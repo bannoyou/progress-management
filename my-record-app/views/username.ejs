@@ -1,0 +1,12 @@
+<div class="card-name">
+    <div class="row d-flex align-items-center justify-content-between">
+        <div class="col-3">
+            <h5><%= user.user_name %></h5>
+        </div>
+        <div class="col-9">
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: <%= user.progress_rate %>%" aria-valuenow="<%= user.progress_rate %>" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+        </div>
+    </div>
+</div>
