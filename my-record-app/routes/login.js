@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt'); // パスワードのハッシュ化と比較�
 
 
 // ログイン処理のPOSTリクエスト
-router.post('/login', async (req, res) => {
+router.post('/select', async (req, res) => {
     const { name, pass } = req.body;  // フォームからユーザー名とパスワードを取得
 
     try {

@@ -5,6 +5,7 @@ const loginRoutes = require('./routes/login'); // login.js へのパスを追加
 const recordRoutes = require('./routes/record');
 const registerRoutes = require('./routes/register');
 const historyRoutes = require('./routes/history');
+
 const app = express();
 
 //セッション管理
@@ -75,6 +76,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/register', registerRoutes);
 app.use('/record', recordRoutes);
 app.use('/history',historyRoutes);
+
 app.use('/', loginRoutes);
 
 // サーバーをポート3000で起動
