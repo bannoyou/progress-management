@@ -14,7 +14,7 @@ const MySQLStore = require('express-mysql-session')(session);
 const options = {
   host: 'localhost', // MySQLホスト名
   user: 'root', // MySQLユーザー名
-  password: 'youi0819', // MySQLのパスワード
+  password: 'Youi0819@', // MySQLのパスワード
   database: 'progress', // 使用するデータベース名
 };
 
