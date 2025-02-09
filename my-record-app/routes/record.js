@@ -32,13 +32,13 @@ router.post('/achieve', async (req, res) => {
             // res.json({ success: true, message: 'タスクを達成しました！' });
 
             // recordページにリダイレクト
-            res.redirect('http://localhost:3000/record/'+ mainTaskId);
+            res.redirect('http://52.63.211.146:3000/record/'+ mainTaskId);
 
         } else {
             // res.json({ success: false, message: '既に達成済みです。' });
 
             // recordページにリダイレクト
-            res.redirect('http://localhost:3000/record/'+ mainTaskId);
+            res.redirect('http://52.63.211.146:3000/record/'+ mainTaskId);
         }
     } catch (error) {
         console.error(error);

@@ -82,5 +82,5 @@ app.use('/', loginRoutes);
 // サーバーをポート3000で起動
 const port = 3000;
 app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+    console.log(`Server is running on http://52.63.211.146:${port}`);
 });
