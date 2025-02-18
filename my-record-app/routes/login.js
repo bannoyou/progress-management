@@ -27,7 +27,7 @@ router.post('/select', async (req, res) => {
 
                 console.log(user.id);
                 console.log(user.name);
-                res.render('select', { username: user.name });
+                res.redirect('/select');
 
             } else {
                 // パスワードが間違っている場合、ログインページを再表示しエラーメッセージを表示

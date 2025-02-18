@@ -1,10 +1,11 @@
 const express = require('express');
 const session = require('express-session');
 const bodyParser = require('body-parser');
-const loginRoutes = require('./routes/login'); // login.js へのパスを追加
+const loginRoutes = require('./routes/login'); 
 const recordRoutes = require('./routes/record');
 const registerRoutes = require('./routes/register');
 const historyRoutes = require('./routes/history');
+const selectRoutes = require('./routes/select'); 
 
 const app = express();
 
@@ -76,7 +77,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/register', registerRoutes);
 app.use('/record', recordRoutes);
 app.use('/history',historyRoutes);
-
+app.use('/select', selectRoutes);
 app.use('/', loginRoutes);
 
 // サーバーをポート3000で起動
