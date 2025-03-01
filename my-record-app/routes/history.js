@@ -5,10 +5,14 @@ const db=require('../db');
 
 router.get('/', async (req,res) => {
     // ログインチェック
-    if (!req.session.userId) {
+    if (!req.session.userid) {
         // ログインしていない場合はリダイレクト
+        console.log("not_login")
         return res.redirect('/');
     }
+
+    console.log("ok");
+    console.log(req.session.userid);
     
     try {
         // main_tasksテーブルからid,titleを取得
