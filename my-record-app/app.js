@@ -7,6 +7,12 @@ const registerRoutes = require('./routes/register');
 const historyRoutes = require('./routes/history');
 const selectRoutes = require('./routes/select'); 
 
+console.log('loginRoutes:', loginRoutes);
+console.log('recordRoutes:', recordRoutes);
+console.log('registerRoutes:', registerRoutes);
+console.log('historyRoutes:', historyRoutes);
+console.log('selectRoutes:', selectRoutes);
+
 const app = express();
 
 //セッション管理
@@ -74,11 +80,12 @@ const path=require('path');
 app.use(express.static(path.join(__dirname, 'public')));
 
 // ルートを設定
+app.use('/', loginRoutes);
 app.use('/register', registerRoutes);
 app.use('/record', recordRoutes);
 app.use('/history',historyRoutes);
 app.use('/select', selectRoutes);
-app.use('/', loginRoutes);
+
 
 // サーバーをポート3000で起動
 const port = 3000;
