@@ -6,35 +6,51 @@ const recordRoutes = require('./routes/record');
 const registerRoutes = require('./routes/register');
 const historyRoutes = require('./routes/history');
 const selectRoutes = require('./routes/select'); 
+const db = require('./db');  // db.js を読み込む
 
 console.log('loginRoutes:', loginRoutes);
 console.log('recordRoutes:', recordRoutes);
 console.log('registerRoutes:', registerRoutes);
 console.log('historyRoutes:', historyRoutes);
 console.log('selectRoutes:', selectRoutes);
+console.log('db',db);
 
 const app = express();
 
 //セッション管理
+// const MySQLStore = require('express-mysql-session')(session);
+
+// const options = {
+//   host: 'localhost', // MySQLホスト名
+//   user: 'root', // MySQLユーザー名
+//   password: 'youi0819', // MySQLのパスワード
+//   database: 'progress', // 使用するデータベース名
+// };
+
+// const sessionStore = new MySQLStore(options);
+
+// const sess = {
+//   secret: 'secretsecretsecret',
+//   cookie: { maxAge: 60000 },
+//   store: new MySQLStore(options),
+//   resave: false,
+//   saveUninitialized: true,
+// }
+
 const MySQLStore = require('express-mysql-session')(session);
 
-const options = {
-  host: 'localhost', // MySQLホスト名
-  user: 'root', // MySQLユーザー名
-  password: 'Youi0819@', // MySQLのパスワード
-  database: 'progress', // 使用するデータベース名
-};
-
-const sessionStore = new MySQLStore(options);
+const sessionStore = new MySQLStore({}, db);  // db.js の pool を使用
 
 const sess = {
   secret: 'secretsecretsecret',
-  cookie: { maxAge: 60000 },
-  store: new MySQLStore(options),
+  cookie: { maxAge: 1000 * 60 * 60 * 24, secure: false }, // secure: false を設定
+  store: sessionStore,
   resave: false,
-  saveUninitialized: true,
-}
+  saveUninitialized: false,  // 未初期化のセッションを保存しない
+};
 
+
+// ここから未変更
 if (app.get('env') === 'production') {
   app.set('trust proxy', 1)
   sess.cookie.secure = true
@@ -90,5 +106,5 @@ app.use('/select', selectRoutes);
 // サーバーをポート3000で起動
 const port = 3000;
 app.listen(port, () => {
-    console.log(`Server is running on http://52.63.211.146:${port}`);
+    console.log(`Server is running on http://localhost:${port}`);
 });
