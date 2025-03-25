@@ -18,25 +18,6 @@ console.log('db',db);
 const app = express();
 
 //セッション管理
-// const MySQLStore = require('express-mysql-session')(session);
-
-// const options = {
-//   host: 'localhost', // MySQLホスト名
-//   user: 'root', // MySQLユーザー名
-//   password: 'youi0819', // MySQLのパスワード
-//   database: 'progress', // 使用するデータベース名
-// };
-
-// const sessionStore = new MySQLStore(options);
-
-// const sess = {
-//   secret: 'secretsecretsecret',
-//   cookie: { maxAge: 60000 },
-//   store: new MySQLStore(options),
-//   resave: false,
-//   saveUninitialized: true,
-// }
-
 const MySQLStore = require('express-mysql-session')(session);
 
 const sessionStore = new MySQLStore({}, db);  // db.js の pool を使用
@@ -91,6 +72,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //パスの設定
 const path=require('path');
 
+//非同期処理リクエストbody
+app.use(express.json()); 
 
 // 静的ファイルの提供（必要に応じて設定）
 app.use(express.static(path.join(__dirname, 'public')));

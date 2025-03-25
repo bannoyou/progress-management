@@ -8,37 +8,44 @@ router.post('/achieve', async (req, res) => {
     const { userId, mainTaskId, subTaskId } = req.body;
 
     try {
-        // 既に達成済みでないことを確認
         const [rows] = await pool.query(`
             SELECT completed FROM user_tasks 
             WHERE user_id = ? AND main_task_id = ? AND sub_task_id = ?
         `, [userId, mainTaskId, subTaskId]);
 
+        console.log(req.body);
+
         if (rows.length > 0 && !rows[0].completed) {
-            // タスクを達成済みに更新
             await pool.query(`
                 UPDATE user_tasks 
                 SET completed = true 
                 WHERE user_id = ? AND main_task_id = ? AND sub_task_id = ?
             `, [userId, mainTaskId, subTaskId]);
 
-            // ポイントをユーザーに追加（ポイントの量は適宜調整）
             await pool.query(`
                 UPDATE users 
                 SET points = points + 10 
                 WHERE id = ?
             `, [userId]);
 
-            // res.json({ success: true, message: 'タスクを達成しました！' });
+            // 更新後の進捗率を取得
+            const [completedTasksRows] = await pool.query(`
+                SELECT COUNT(*) AS completedCount FROM user_tasks 
+                WHERE user_id = ? AND main_task_id = ? AND completed = true
+            `, [userId, mainTaskId]);
 
-            // recordページにリダイレクト
-            res.redirect('http://52.63.211.146:3000/record/'+ mainTaskId);
+            const completedCount = completedTasksRows[0].completedCount;
 
+            const [subTasks] = await pool.query(`
+                SELECT COUNT(*) AS total FROM sub_tasks WHERE main_task_id = ?
+            `, [mainTaskId]);
+
+            const totalSubTasks = subTasks[0].total;
+            const progress = totalSubTasks > 0 ? Math.round((completedCount / totalSubTasks) * 100) : 0;
+
+            return res.json({ success: true, progress });
         } else {
-            // res.json({ success: false, message: '既に達成済みです。' });
-
-            // recordページにリダイレクト
-            res.redirect('http://52.63.211.146:3000/record/'+ mainTaskId);
+            return res.json({ success: false, message: '既に達成済みです。' });
         }
     } catch (error) {
         console.error(error);
@@ -46,7 +53,6 @@ router.post('/achieve', async (req, res) => {
     }
 });
 
-module.exports = router;
 
 // メインタスク、サブタスク、プログレスバーのデータを取得
 router.get('/:mainTaskId', async (req, res) => {
@@ -85,8 +91,7 @@ router.get('/:mainTaskId', async (req, res) => {
             imagePath = '/img/Python.png';
         } else if (mainTaskId === '4') {
             imagePath = '/img/mysql.png';
-        }
-         else {
+        } else {
             imagePath = '/Img/default.png'; // デフォルト画像
         }
 
@@ -98,5 +103,5 @@ router.get('/:mainTaskId', async (req, res) => {
     }
 });
 
-
+module.exports = router;
 

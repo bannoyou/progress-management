@@ -67,7 +67,9 @@
                   <input type="hidden" name="userId" value="<%= userId %>">
                   <input type="hidden" name="mainTaskId" value="<%= mainTask.id %>">
                   <input type="hidden" name="subTaskId" value="<%= subTask.id %>">
-                  <button type="submit" class="btn btn-primary recbutton">達成</button>
+                  <button type="button" class="btn btn-primary recbutton" data-mainTaskId="<%= mainTask.id %>"
+                    data-subTaskId="<%= subTask.id %>" onclick="completeTask(this)">達成
+                  </button>
                 </form>
               </div>
               <% }); %>
@@ -154,7 +156,37 @@
       document.getElementById("overlayMenu").style.width = "0";
     }
   </script>
+  <script>
+    async function completeTask(button) {
+      const userId = "<%= userId %>"; // サーバー側から埋め込まれた userId
+      const mainTaskId = button.getAttribute("data-mainTaskId");
+      const subTaskId = button.getAttribute("data-subTaskId");
 
+      try {
+        const response = await fetch('/record/achieve', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ userId, mainTaskId, subTaskId })
+        });
+
+        const result = await response.json();
+        if (result.success) {
+          updateProgressBar(result.progress); // 進捗バーを更新
+        } else {
+          alert(result.message); // 既に達成済みならアラート表示
+        }
+      } catch (error) {
+        console.error("エラー:", error);
+      }
+    }
+
+    function updateProgressBar(progress) {
+      document.querySelector(".progress-bar").style.width = progress + "%";
+      document.querySelector(".progress-bar").setAttribute("aria-valuenow", progress);
+    }
+  </script>
 </body>
 
 </html>
